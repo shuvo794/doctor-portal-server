@@ -41,7 +41,7 @@ async function run() {
     const userCollection = database.collection("users");
     app.get("/appoinments", async (req, res) => {
       const email = req.query.email;
-      const date = new Date(req.query.date).toLocaleDateString();
+      const date = req.query.date;
       console.log(date);
       const quary = { email: email, date: date };
       console.log(quary);
@@ -107,3 +107,4 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
